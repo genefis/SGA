@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "xr-lab-8a0a5": {
+      "hosting": {
+        "SGA_app": [
+          "xr-lab-8a0a5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "xr-lab-8a0a5"
+  }
+}
