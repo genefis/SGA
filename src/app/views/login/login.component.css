@@ -1,0 +1,80 @@
+.main-container{
+  background-image: url(https://www.studioseed.net/wp-content/uploads/2019/10/Realidad-Virtual-rv-2.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+.title{
+  padding: 0em 0.75em;
+  background-color: rgba(196, 193, 193, 0.532);
+}
+.title h2{
+  padding: 0.25em;
+  margin-bottom: 0;
+}
+.main-section{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+}
+.card-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(60, 60, 60, 0.75);
+  height: 90%;
+  min-width: 30vw;
+  border-radius: 35px;
+}
+.icon-user{
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-user mat-icon{
+  width: 100%;
+  font-size: 12em;
+  height: auto;
+}
+mat-icon{
+  color: #000;
+}
+.form-login{
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input{
+  padding-left: 0.5em;
+}
+.mat-input{
+  width: 100%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 2em;
+}
+label{
+  color: #f8f8f8;
+}
+.btn button{
+  background-color: #6cd1fc;
+  color: #000;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: rgba(190, 186, 186, 0.581);
+  border-radius: 5px;
+}

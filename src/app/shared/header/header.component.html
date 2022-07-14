@@ -1,0 +1,74 @@
+<header class="main-header">
+  <div class="logo">
+    <img src="../../../assets/logo.png" alt="" />
+  </div>
+  <div class="nav">
+    <nav>
+      <div class="btn-nav">
+        <a href="">Inicio</a>
+      </div>
+      <div class="btn-nav">
+        <a href="">Mentores</a>
+      </div>
+      <div class="btn-nav">
+        <a routerLink="menu-registro" routerLinkActive="routeActive">Ingreso/Salida</a>
+      </div>
+      <div class="btn-nav">
+        <a routerLink="#" routerLinkActive="routeActive">Reportes</a>
+      </div>
+      <div class="btn-nav">
+        <a routerLink="#" routerLinkActive="routeActive">Equipos</a>
+      </div>
+    </nav>
+  </div>
+  <div class="search">
+    <form class="search-form">
+      <mat-form-field class="form-header" appearance="outline">
+        <mat-label>Buscar</mat-label>
+        <input
+          type="text"
+          placeholder="Buscar..."
+          aria-label="Buscar"
+          matInput
+          [formControl]="searchControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let option of filteredOptions | async"
+            [value]="option"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="notify-btns">
+    <button mat-mini-fab class="btn-notiify btn-list">
+      <mat-icon>list</mat-icon>
+    </button>
+    <button mat-mini-fab class="btn-notiify btn-mail">
+      <mat-icon>mark_email_unread</mat-icon>
+    </button>
+    <button mat-mini-fab class="btn-notiify btn-alert">
+      <mat-icon>notifications</mat-icon>
+    </button>
+
+  </div>
+  <div class="user">
+    <div class="user-data">
+      <img src="" alt="">
+      <div class="user-info">
+        <p class="user-name">Miguel UTPL</p>
+        <p class="user-rol">Administrador</p>
+      </div>
+      <div class="menu-user">
+        <button mat-icon-button class="btn-expand">
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

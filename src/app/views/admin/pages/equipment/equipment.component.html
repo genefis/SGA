@@ -1,0 +1,119 @@
+<main class="main-container">
+  <aside class="sideBar">
+    <h2>Inventario</h2>
+    <button class="btnAdd">
+      <mat-icon class="addIcon">add</mat-icon>
+      Añadir Item
+    </button>
+    <div class="menu-expand">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Equipos </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Computadores</p>
+        <p>Tablet's</p>
+        <p>Camaras</p>
+        <p>Lentes VR</p>
+      </mat-expansion-panel>
+      <div class="line-br"></div>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Marcas </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Asus</p>
+        <p>VR</p>
+        <p>Apple</p>
+        <p>Lenovo</p>
+      </mat-expansion-panel>
+    </div>
+  </aside>
+  <section class="main-section">
+    <div class="headerActions">
+      <div class="filters">
+        <p>Filtrar por:</p>
+        <div class="btns-filter">
+          <button class="btnFilter">
+            Todo
+            <mat-icon class="mat-18">expand_more</mat-icon>
+          </button>
+        </div>
+      </div>
+      <form class="search-form">
+        <mat-form-field class="form-header" appearance="outline">
+          <mat-label>Buscar</mat-label>
+          <input
+            type="text"
+            placeholder="Buscar..."
+            aria-label="Buscar"
+            matInput
+            [formControl]="searchControl"
+            [matAutocomplete]="auto"
+          />
+          <mat-icon matSuffix>search</mat-icon>
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option
+              *ngFor="let option of filteredOptions | async"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let element"[ngStyle]="{'background-color':element.color === '1' ? '#e7e1e1' : '#fff' }">{{ element.id }}</td>
+        </ng-container>
+
+        <!-- Nombre Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element"[ngStyle]="{'background-color':element.color === '1' ? '#e7e1e1' : '#fff' }">{{ element.nombre }}</td>
+        </ng-container>
+
+        <!-- Marca Column -->
+        <ng-container matColumnDef="marca">
+          <th mat-header-cell *matHeaderCellDef>Marca</th>
+          <td mat-cell *matCellDef="let element"[ngStyle]="{'background-color':element.color === '1' ? '#e7e1e1' : '#fff' }">{{ element.marca }}</td>
+        </ng-container>
+
+        <!-- Categoria Column -->
+        <ng-container matColumnDef="categoria">
+          <th mat-header-cell *matHeaderCellDef>Categoria</th>
+          <td mat-cell *matCellDef="let element"[ngStyle]="{'background-color':element.color === '1' ? '#e7e1e1' : '#fff' }">{{ element.categoria }}</td>
+        </ng-container>
+
+        <!-- # de equipos Column -->
+        <ng-container matColumnDef="n_equipos">
+          <th mat-header-cell *matHeaderCellDef># de Equipos</th>
+          <td mat-cell *matCellDef="let element"[ngStyle]="{'background-color':element.color === '1' ? '#e7e1e1' : '#fff' }">{{ element.n_equipos }}</td>
+        </ng-container>
+
+        <!-- Departamento Column -->
+        <ng-container matColumnDef="departamento">
+          <th mat-header-cell *matHeaderCellDef>Departamento</th>
+          <td mat-cell *matCellDef="let element"[ngStyle]="{'background-color':element.color === '1' ? '#e7e1e1' : '#fff' }">{{ element.departamento }}</td>
+        </ng-container>
+
+        <!-- Descripcion Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+          <td mat-cell *matCellDef="let element"[ngStyle]="{'background-color':element.color === '1' ? '#e7e1e1' : '#fff' }">{{ element.descripcion }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </section>
+</main>

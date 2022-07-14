@@ -1,0 +1,122 @@
+.main-container{
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+}
+.sideBar{
+  width: 12%;
+  height: 100%;
+  background-color: #e7e7e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sideBar h2{
+  width: 88%;
+  height: 4%;
+  text-align: left;
+  padding-top: 1em;
+
+}
+.btnAdd{
+  width: 88%;
+  height: 8%;
+  border: none;
+  display: flex;
+  align-items: center;
+  background-color: #8cc1de;
+  color: #fff;
+}
+.addIcon{
+  color: #000;
+  padding-right: 0.5em;
+}
+.menu-expand{
+  padding: 1em 0;
+  width: 88%;
+  box-shadow: none;
+}
+.menu-expand mat-expansion-panel{
+  background-color: #e7e7e7;
+  box-shadow: none;
+}
+.menu-expand mat-panel-title{
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.menu-expand p{
+  padding-left: 1em;
+}
+.line-br{
+  border-bottom: 3px solid #c7c7c7;
+}
+.main-section{
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+.headerActions{
+  display: flex;
+  width:100%;
+  height: 15%;
+  align-items: center;
+  margin-top: 2em;
+}
+.filters{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.filters p{
+  width: 25%;
+  text-align: right;
+  padding-right: 1em;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.btns-filter{
+  width: 75%;
+}
+.btnFilter{
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1em;
+  height: 3em;
+  min-width: 8em;
+}
+.search-form{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.search-form mat-form-field{
+  width: 75%;
+}
+.mat-elevation-z8{
+  height: 80%;
+  width: 95%;
+}
+.mat-elevation-z8 table{
+  height: 90%;
+  width: 100%;
+  overflow-y: scroll;
+}
+table th{
+  border-left: 1px solid #000;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.15em;
+  font-weight: 600;
+}
+table td{
+  text-align: center;
+}
+.mat-column-id{
+  border-left: none!important;
+}

@@ -1,0 +1,40 @@
+<main class="main-container">
+  <div class="header">
+    <div class="title">
+      <h2>Ingreso al laoratorio de realidades extendidas</h2>
+    </div>
+  </div>
+  <section class="main-section">
+    <article class="card-login">
+      <div class="icon-user">
+        <mat-icon class="">person</mat-icon>
+      </div>
+      <div class="form-login">
+        <form action="">
+          <label for="email">Correo Electrónico:</label>
+          <mat-form-field class="mat-input" appearance="outline">
+            <input matInput formControlName="email" />
+            <mat-icon matPrefix>person</mat-icon>
+            <mat-error *ngIf="email?.errors?.['required']">
+              Correo electrónico es requerido
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+              Por favor ingrese un correo electronico valido
+            </mat-error>
+          </mat-form-field>
+          <label for="">Contraseña:</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="password" formControlName="password" />
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-error *ngIf="password?.errors?.['required']">
+              Contraseña es requerida
+            </mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="btn">
+        <button mat-raised-button color="primary">Ingresar</button>
+      </div>
+    </article>
+  </section>
+</main>
