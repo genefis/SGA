@@ -13,22 +13,29 @@
     </article>
     <article class="form-card">
       <div class="check-out">
-        <h2>Registro Ingreso/Salida</h2>
-        <form action="" class="form">
+        <h2>Registro Salida</h2>
+        <form class="mt-4" [formGroup]="createSalida" (ngSubmit)="agregarSalida()">
+          <div class="row">
+            <label for="cedula" class="form-label">Cédula</label>
+            <input type="text" class="form-control" 
+            formControlName="cedula" placeholder="Ingrese su cédula">
+        </div>
           <div class="form-line">
-            <label for="date" class="form-label">Fecha Ingreso/Salida:</label>
+            <label for="date" class="form-label">Fecha Salida:</label>
             <div class="form-input">
-              <input type="date" name="date" class="" />
+              <input type="date" name="date" class="" formControlName="fecha"/>
             </div>
           </div>
+          <br>
           <div class="form-line">
             <label for="time" class="form-label">Hora Salida:</label>
             <div class="form-input">
-              <input type="time" name="date" class="" />
+              <input type="time" name="date" class="" formControlName="hora" />
             </div>
           </div>
+          <br>
           <div class="form-btns">
-            <button mat-raised-button>Registrar</button>
+            <button type="submit" class="btn btn-dark btn-lg ">Registrar</button>
           </div>
         </form>
       </div>

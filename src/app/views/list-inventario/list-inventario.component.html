@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">
+                LISTADO DE ITEMS
+            </span>
+            <button class="btn btn-dark float-right" routerLink="/inventario">Agregar </button>
+            <h5 style="margin-top: 30px;" *ngIf="items.length == 0">No hay datos disponibles</h5>
+            <table *ngIf="items.length > 0" class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th >Nombre</th>
+                    <th >categoria</th>
+                    <th >Marca</th>
+                    <th >Descripción</th>
+                    <th >Departamento</th>
+                    <th >Nº Equipos</th>
+                    <th ></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of items">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.categoria}}</td>
+                    <td>{{item.marca}}</td>
+                    <td>{{item.descripcion}}</td>
+                    <td>{{item.departamento}}</td>
+                    <td>{{item.n_equipos}}</td>
+                    <td>
+                        <i class="fa-solid fa-pen-to-square fa-lg text-info" [routerLink]="['/edit-inventario/',item.id]"></i>
+                    </td>
+                    <td>
+                        <i (click)="eliminarItem(item.id)" class="fa-solid fa-trash fa-lg text-danger"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

@@ -22,6 +22,16 @@ import { CheckInComponent } from './views/user/pages/check-in/check-in.component
 import { CheckOutComponent } from './views/user/pages/check-out/check-out.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { EquipmentComponent } from './views/admin/pages/equipment/equipment.component';
+import { DashboardAComponent } from './views/dashboard-a/dashboard-a.component';
+import { RegistrarUsuarioComponent } from './views/registrar-usuario/registrar-usuario.component';
+import { VerificarCorreoComponent } from './views/verificar-correo/verificar-correo.component';
+import { RecuperarPasswordComponent } from './views/recuperar-password/recuperar-password.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { ToastrModule } from 'ngx-toastr';
+import { InventarioComponent } from './views/inventario/inventario.component';
+import { ListInventarioComponent } from './views/list-inventario/list-inventario.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 
 @NgModule({
@@ -38,6 +48,13 @@ import { EquipmentComponent } from './views/admin/pages/equipment/equipment.comp
     CheckOutComponent,
     AdminComponent,
     EquipmentComponent,
+    DashboardAComponent,
+    RegistrarUsuarioComponent,
+    VerificarCorreoComponent,
+    RecuperarPasswordComponent,
+    SpinnerComponent,
+    InventarioComponent,
+    ListInventarioComponent,
 
   ],
   imports: [
@@ -50,7 +67,9 @@ import { EquipmentComponent } from './views/admin/pages/equipment/equipment.comp
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
+    AngularFirestoreModule
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

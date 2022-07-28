@@ -4,29 +4,139 @@
       Registro de Horario
     </h2>
     <div class="form-card">
-      <form action="">
-        <div class="input-section">
-          <div class="input-line">
-            <label for="date">Dia:</label>
-            <input type="date" name="date" id="date">
-          </div>
-          <div class="input-line">
-            <label for="in">Hora de entrada:</label>
-            <input type="time" name="in" id="in">
-          </div>
-          <div class="input-line">
-            <label for="out">Hora de salida:</label>
-            <input type="time" name="out" id="out">
+      <form class="row g-6 needs-validation" novalidate [formGroup]="createHorario" (ngSubmit)="agregarHorario()">
+        <div class="row">
+          <label for="validationCustom01" class="form-label">Cédula</label>
+          <input type="text" class="form-control" 
+          formControlName="cedula" placeholder="Ingrese su cédula" minlength="10" required="" pattern="[0-9]+">
+      </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom01" class="form-label">Día</label>
+          <input type="text" name="date" class="form-control" formControlName="diaL" value="Lunes" placeholder="Lunes" readonly="readonly" />
+          <div class="valid-feedback">
+            Looks good!
           </div>
         </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Ingreso</label>
+          <input type="time" name="date" class="form-control" formControlName="ingresoL" />
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Salida</label>
+          <input type="time" name="date" class="form-control" formControlName="salidaL" />
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom01" class="form-label">Día</label>
+          <input type="text" name="date" class="form-control" formControlName="diaM" value="Martes" placeholder="Martes" readonly="readonly" />
 
-        <div class="btns-form">
-          <button type="button" class="btn btn-1" mat-raised-button>Añadir</button>
-          <button type="button" class="btn btn-2" mat-raised-button>Registrar</button>
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Ingreso</label>
+          <input type="time" name="date" class="form-control" formControlName="ingresoM" />
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Salida</label>
+          <input type="time" name="date" class="form-control" formControlName="salidaM" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom01" class="form-label">Día</label>
+          <input type="text" name="date" class="form-control" formControlName="diaMi" value="Miércoles" placeholder="Miércoles" readonly="readonly" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Ingreso</label>
+          <input type="time" name="date" class="form-control" formControlName="ingresoMi" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Salida</label>
+          <input type="time" name="date" class="form-control" formControlName="salidaMi" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom01" class="form-label">Día</label>
+          <input type="text" name="date" class="form-control" formControlName="diaJ" value="Jueves" placeholder="Jueves" readonly="readonly" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Ingreso</label>
+          <input type="time" name="date" class="form-control" formControlName="ingresoJ" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Salida</label>
+          <input type="time" name="date" class="form-control" formControlName="salidaJ" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom01" class="form-label">Día</label>
+          <input type="text" name="date" class="form-control" formControlName="diaV" value="Viernes" placeholder="Viernes" readonly="readonly" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Ingreso</label>
+          <input type="time" name="date" class="form-control" formControlName="ingresoV" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Salida</label>
+          <input type="time" name="date" class="form-control" formControlName="salidaV" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom01" class="form-label">Día</label>
+          <input type="text" name="date" class="form-control" formControlName="diaS" value="Sábado" placeholder="Sábado" readonly="readonly" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Ingreso</label>
+          <input type="time" name="date" class="form-control" formControlName="ingresoS" />
+
+        </div>
+        <div class="col-md-4">
+          <br>
+          <label for="validationCustom02" class="form-label">Salida</label>
+          <input type="time" name="date" class="form-control" formControlName="salidaS" />
+
+        </div>
+
+        <div class="col-12">
+          <br>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Acepte ingreso de su horario
+            </label>
+
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Agregar Horario</button>
         </div>
       </form>
     </div>
-    <h3>Resumen de horario</h3>
+<!--   <h3>Resumen de horario</h3>
     <table class="table">
       <tr class="table-header">
         <th class="th-day">Dia</th>
@@ -38,6 +148,6 @@
         <td class="td">lorem impsum</td>
         <td class="td">lorem impsum</td>
       </tr>
-    </table>
+    </table>--> 
   </section>
 </main>

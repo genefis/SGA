@@ -8,7 +8,7 @@
         <a href="">Inicio</a>
       </div>
       <div class="btn-nav">
-        <a href="">Mentores</a>
+        <a routerLink="admin/equipment">Mentores</a>
       </div>
       <div class="btn-nav">
         <a routerLink="menu-registro" routerLinkActive="routeActive">Ingreso/Salida</a>
@@ -17,7 +17,7 @@
         <a routerLink="#" routerLinkActive="routeActive">Reportes</a>
       </div>
       <div class="btn-nav">
-        <a routerLink="#" routerLinkActive="routeActive">Equipos</a>
+        <a routerLink="/list-inventario" >Equipos</a>
       </div>
     </nav>
   </div>
@@ -69,6 +69,9 @@
           <mat-icon>expand_more</mat-icon>
         </button>
       </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="button" class="btn btn-outline-primary me-2" (click)="logOut()" >Salir</button>
     </div>
   </div>
 </header>

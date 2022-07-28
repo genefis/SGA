@@ -35,7 +35,7 @@
   border-radius: 35px;
 }
 .icon-user{
-  height: 40%;
+  height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,4 +77,7 @@ label{
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
   background-color: rgba(190, 186, 186, 0.581);
   border-radius: 5px;
+}
+p{
+  color: #f8f8f8;
 }

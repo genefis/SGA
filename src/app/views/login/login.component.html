@@ -1,39 +1,42 @@
 <main class="main-container">
   <div class="header">
     <div class="title">
-      <h2>Ingreso al laoratorio de realidades extendidas</h2>
+      <h2>Ingreso al Laboratorio de Realidades Extendidas</h2>
     </div>
   </div>
-  <section class="main-section">
+  <section *ngIf="!loading" class="main-section">
     <article class="card-login">
       <div class="icon-user">
         <mat-icon class="">person</mat-icon>
       </div>
       <div class="form-login">
-        <form action="">
-          <label for="email">Correo Electrónico:</label>
-          <mat-form-field class="mat-input" appearance="outline">
-            <input matInput formControlName="email" />
-            <mat-icon matPrefix>person</mat-icon>
-            <mat-error *ngIf="email?.errors?.['required']">
-              Correo electrónico es requerido
-            </mat-error>
-            <mat-error *ngIf="email?.errors?.['email']">
-              Por favor ingrese un correo electronico valido
-            </mat-error>
-          </mat-form-field>
-          <label for="">Contraseña:</label>
-          <mat-form-field appearance="outline">
-            <input matInput type="password" formControlName="password" />
-            <mat-icon matPrefix>lock</mat-icon>
-            <mat-error *ngIf="password?.errors?.['required']">
-              Contraseña es requerida
-            </mat-error>
-          </mat-form-field>
-        </form>
-      </div>
-      <div class="btn">
-        <button mat-raised-button color="primary">Ingresar</button>
+        <form (ngSubmit)="login()" [formGroup]="loginUsuario">
+          <div class="form-floating mb-3">
+              <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
+              <label>Email</label>
+              <span *ngIf="loginUsuario.get('email')?.hasError('required') && loginUsuario.get('email')?.touched" class="text-danger errorLabel">
+                  El <strong>correo</strong> es requerido
+              </span>
+              <span *ngIf="loginUsuario.get('email')?.hasError('email') && loginUsuario.get('email')?.touched" class="text-danger errorLabel">
+                  El <strong>correo</strong> es invalido
+              </span>
+          </div>
+          <div class="form-floating mb-3">
+              <input type="password" formControlName="password" class="form-control" placeholder="Password">
+              <label>Password</label>
+              <span *ngIf="loginUsuario.get('password')?.hasError('required') && loginUsuario.get('password')?.touched" class="text-danger errorLabel">
+                  La <strong>password</strong> es requerida
+              </span>
+          </div>
+          <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="loginUsuario.invalid" >Ingresar</button>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary mt-3" type="button" (click)="microsoftSignin()">Ingresar con Microsoft</button>
+          </div>
+          <p class="mt-3">No tienes cuenta? <a routerLink="/registrar-usuario">Registrar</a></p>
+          <a class="mt-3" routerLink="/recuperar-password">Recuperar Contraseña</a>
+      </form>
       </div>
     </article>
   </section>
