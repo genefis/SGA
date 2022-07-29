@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AppComponent } from './app.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { UsuarioService } from './usuario.service';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -38,7 +36,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
   declarations: [
     AppComponent,
     HeaderComponent,
-    UsuariosComponent,
     FooterComponent,
     LoginComponent,
     UserComponent,
@@ -71,7 +68,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     ToastrModule.forRoot(), // ToastrModule added
     AngularFirestoreModule
   ],
-  providers: [UsuarioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
